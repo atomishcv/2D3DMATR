@@ -7,6 +7,7 @@ from model import create_model
 
 from vision3d.engine import EpochBasedTrainer
 from vision3d.utils.optimizer import build_optimizer, build_scheduler
+from vision3d.utils.parser import add_trainer_args
 
 
 class Trainer(EpochBasedTrainer):
@@ -51,6 +52,7 @@ class Trainer(EpochBasedTrainer):
 
 
 def main():
+    add_trainer_args()
     cfg = make_cfg()
     trainer = Trainer(cfg)
     trainer.run()
